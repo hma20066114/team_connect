@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Employee Directory</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar 
+      animated="true" 
+      placeholder="Search by name"
+      (ionInput)="handleSearch($event)">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let employee of filteredEmployees" button (click)="viewProfile(employee.id)">
+      <ion-avatar slot="start">
+        <img [src]="employee.avatar" [alt]="employee.name">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ employee.name }}</h2>
+        <p>{{ employee.role }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

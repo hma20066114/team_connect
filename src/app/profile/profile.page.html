@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/directory"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ employee?.name || 'Employee Profile' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="employee">
+  <div class="profile-header">
+    <ion-avatar>
+      <img [src]="employee.avatar" [alt]="employee.name" />
+    </ion-avatar>
+    <h2>{{ employee.name }}</h2>
+    <p>{{ employee.role }}</p>
+  </div>
+
+  <ion-list lines="full" class="ion-margin-top">
+    <ion-item>
+      <ion-icon name="mail-outline" slot="start" color="medium"></ion-icon>
+      <ion-label>
+        <h3>Email</h3>
+        <p>{{ employee.email }}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="call-outline" slot="start" color="medium"></ion-icon>
+      <ion-label>
+        <h3>Phone</h3>
+        <p>{{ employee.phone }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div class="ion-padding">
+    <!-- FIXED: The click handler now points to the correct function -->
+    <ion-button expand="block" (click)="shareContact()">
+      <ion-icon name="share-social-outline" slot="start"></ion-icon>
+      Share Contact Info
+    </ion-button>
+  </div>
+</ion-content>

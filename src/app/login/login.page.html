@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>TeamConnect Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-input label="Email" label-placement="floating" type="email" [(ngModel)]="credentials.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Password" label-placement="floating" type="password" [(ngModel)]="credentials.password"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" (click)="login()" class="ion-margin-top">
+    Sign In
+  </ion-button>
+  <ion-button expand="block" fill="clear" [routerLink]="['/register']">
+    Don't have an account? Register
+  </ion-button>
+</ion-content>

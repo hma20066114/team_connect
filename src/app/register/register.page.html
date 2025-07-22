@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-input label="Full Name" label-placement="floating" [(ngModel)]="credentials.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Email" label-placement="floating" type="email" [(ngModel)]="credentials.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Password" label-placement="floating" type="password" [(ngModel)]="credentials.password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Role / Job Title" label-placement="floating" [(ngModel)]="credentials.role"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Phone Number" label-placement="floating" type="tel" [(ngModel)]="credentials.phone"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" (click)="register()" class="ion-margin-top">
+    Create Account
+  </ion-button>
+</ion-content>

@@ -1,0 +1,43 @@
+ion-header ion-toolbar {
+  --background: var(--ion-color-light);
+  --padding-start: 16px;
+  --padding-end: 16px;
+}
+
+ion-header ion-title {
+  font-size: 1.2rem;
+  color: var(--ion-color-medium);
+  
+  .header-name {
+    font-weight: bold;
+    color: var(--ion-color-dark);
+    display: block;
+    font-size: 1.5rem;
+  }
+}
+
+// General card styles
+ion-card {
+  border-radius: 16px;
+  box-shadow: none;
+  border: 1px solid var(--ion-color-step-200, #e0e0e0);
+  margin-bottom: 16px;
+}
+
+// Quick Actions styles
+.quick-action-button {
+  --background: var(--ion-color-primary-tint);
+  --border-radius: 12px;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 4px;
+
+  ion-icon {
+    font-size: 2rem;
+    color: var(--ion-color-primary);
+  }
+}
+
+.quick-action-button + ion-label {
+  font-size: 0.8rem;
+}

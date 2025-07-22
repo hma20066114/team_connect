@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Attendance</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-card class="ion-text-center main-card">
+    <ion-card-header>
+      <ion-card-title>Attendance Status</ion-card-title>
+    </ion-card-header>
+    <ion-card-content *ngIf="attendanceRecord">
+      <ion-chip [color]="attendanceRecord.status === 'Clocked In' ? 'success' : 'medium'">
+        <ion-label>{{ attendanceRecord.status }}</ion-label>
+      </ion-chip>
+      <p class="status-time">
+        Last update: {{ datePipe.transform(attendanceRecord.timestamp, 'medium') }}
+      </p>
+      <ion-button 
+        expand="block" 
+        [color]="attendanceRecord.status === 'Clocked In' ? 'danger' : 'success'"
+        (click)="handleAttendanceAction()"
+        class="ion-margin-top main-action-button">
+        <ion-icon 
+          slot="start" 
+          [name]="attendanceRecord.status === 'Clocked In' ? 'log-out-outline' : 'log-in-outline'">
+        </ion-icon>
+        {{ attendanceRecord.status === 'Clocked In' ? 'Clock Out' : 'Clock In' }}
+      </ion-button>
+      <div *ngIf="attendanceRecord.status === 'Clocked In' && attendanceRecord.location" class="location-info">
+        <ion-icon name="location-outline" color="medium"></ion-icon>
+        <ion-label>Location captured</ion-label>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
